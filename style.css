@@ -5,6 +5,20 @@
     font-family: gilory;
 }
 
+/* ── Stagger Text Reveal Animation ── */
+.stagger-line {
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: bottom;
+}
+
+.stagger-word {
+    display: inline-block;
+    transform: translateY(100%);
+    opacity: 0;
+    will-change: transform, opacity;
+}
+
 html,
 body {
     height: 100%;

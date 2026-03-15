@@ -382,3 +382,95 @@ if (menuIcon && fullMenu) {
         });
     });
 }
+
+// ── Stagger Text Reveal Animation (GSAP + ScrollTrigger) ──
+gsap.registerPlugin(ScrollTrigger);
+
+// Navbar: stagger animation on page load
+gsap.from(".nav-stagger", {
+    y: 30,
+    opacity: 0,
+    duration: 0.8,
+    stagger: 0.1,
+    ease: "power3.out",
+    delay: 0.1
+});
+
+// Hero section (page-1): animate on page load, not scroll
+document.querySelectorAll("#page-1 .stagger-text").forEach(function (el) {
+    var words = el.querySelectorAll(".stagger-word");
+    if (words.length === 0) return;
+
+    gsap.fromTo(words,
+        { y: 80, opacity: 0 },
+        {
+            y: 0,
+            opacity: 1,
+            duration: 1,
+            stagger: 0.05,
+            ease: "power3.out",
+            delay: 0.3
+        }
+    );
+});
+
+// All other sections: animate on scroll
+document.querySelectorAll(".stagger-text").forEach(function (el) {
+    // Skip page-1 elements (already animated above)
+    if (el.closest("#page-1")) return;
+
+    var words = el.querySelectorAll(".stagger-word");
+    if (words.length === 0) return;
+
+    gsap.fromTo(words,
+        { y: 80, opacity: 0 },
+        {
+            y: 0,
+            opacity: 1,
+            duration: 1,
+            stagger: 0.05,
+            ease: "power3.out",
+            scrollTrigger: {
+                trigger: el,
+                start: "top 85%",
+                toggleActions: "play none none none"
+            }
+        }
+    );
+});
+
+// ── Button Expand Animation ──
+document.querySelectorAll(".btn-expand").forEach(function (btn) {
+    gsap.fromTo(btn,
+        { scale: 0.7, opacity: 0 },
+        {
+            scale: 1,
+            opacity: 1,
+            duration: 0.8,
+            ease: "power3.out",
+            scrollTrigger: {
+                trigger: btn,
+                start: "top 90%",
+                toggleActions: "play none none none"
+            }
+        }
+    );
+});
+
+// ── Slide-Up Reveal ──
+document.querySelectorAll("#page-4 .elem2").forEach(function (card) {
+    gsap.fromTo(card,
+        { y: 100, opacity: 0 },
+        {
+            y: 0,
+            opacity: 1,
+            duration: 1,
+            ease: "power3.out",
+            scrollTrigger: {
+                trigger: card,
+                start: "top 85%",
+                toggleActions: "play none none none"
+            }
+        }
+    );
+});
