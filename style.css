@@ -685,21 +685,21 @@ main {
 
 #card1 {
     object-position: 40% 50%;
-    background-image: url(MSFT-Person-holding-a-pen-using-the-Paint-app-to-create-an-image_VP1-539x349.webp);
+    background-image: url(./Assets/MSFT-Person-holding-a-pen-using-the-Paint-app-to-create-an-image_VP1-539x349.webp);
 }
 
 #card2 {
-    background-image: url(premium_photo-1677539897473-7f04c7786ca0.webp);
+    background-image: url(./Assets/premium_photo-1677539897473-7f04c7786ca0.webp);
 }
 
 #card3 {
-    background-image: url(pic8.webp);
+    background-image: url(./Assets/pic8.webp);
 }
 #card4 {
-    background-image: url(pic11.webp);
+    background-image: url(./Assets/pic11.webp);
 }
 #card5 {
-    background-image: url(pic10.webp);
+    background-image: url(./Assets/pic10.webp);
 }
 .elem2>h4 {
     position: absolute;
